@@ -1,0 +1,16 @@
+<div>
+    <div *ngFor="let row of combinedList; let id = index" (mouseenter)=updateCurrentRecords(id)>
+        <span>Source: {{ row.source.Name }}</span>
+        <span *ngIf="row.main !== null; else selectMain">Main: {{ row.main.Name }}</span>
+    </div>
+</div>
+<div *ngIf="currentRecords !== null">
+    Details
+    <div>
+        <span>Id: {{ currentRecords.source.id }} </span>
+        <span>Name: {{ currentRecords.source.Name }}</span>
+    </div>
+</div>    
+<ng-template #selectMain>
+    <span>Select row from Main table </span>
+</ng-template>

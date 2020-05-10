@@ -1,0 +1,12 @@
+<div>
+    <div class="form-group">
+        <label for="sourcefile">Choose Source File</label>
+        <input type="file" id="sourcefile" (change)="setSourceFile($event.target.files)">
+    </div>
+
+    <div class="form-group">
+        <label for="mainfile">Choose Source File</label>
+        <input type="file" id="mainfile" (change)="setMainFile($event.target.files)">
+    </div>
+</div>
+<a [routerLink]="['/sync']">Next</a>
